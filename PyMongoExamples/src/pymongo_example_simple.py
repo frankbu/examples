@@ -43,19 +43,19 @@ def main(args):
         # created automatically when we insert into it. These are simple JSON
         # objects.
         #
-        database.adventurers.insert({'name': 'Cooper',
+        print "id: %s" % database.adventurers.insert({'name': 'Cooper',
                                      'class': 'fighter',
                                      'level': 5,
                                      'equipment': {'main-hand': 'sword',
                                                    'off-hand': 'shield',
                                                    'armor': 'plate'}})
-        database.adventurers.insert({'name': 'Nishira',
+        print "id: %s" % database.adventurers.insert({'name': 'Nishira',
                                      'class': 'warlock',
                                      'level': 10,
                                      'equipment': {'main-hand': 'wand',
                                                    'off-hand': 'dagger',
                                                    'armor': 'cloth'}})
-        database.adventurers.insert({'name': 'Mordo',
+        print "id: %s" % database.adventurers.insert({'name': 'Mordo',
                                      'class': 'wizard',
                                      'level': 11,
                                      'equipment': {'off-hand': 'dagger',
@@ -86,6 +86,7 @@ def main(args):
         if party.count() > 0:
             print('The quest begins!')
             for adventurer in party:
+                print adventurer
                 print('%s, level %s %s, departs wearing %s and wielding a %s and %s.'
                        % ( adventurer['name'], adventurer['level'],
                            adventurer['class'],
